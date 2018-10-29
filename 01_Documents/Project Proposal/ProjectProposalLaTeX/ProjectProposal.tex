@@ -1,0 +1,201 @@
+\documentclass[12pt]{article}
+\usepackage{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper}                   % ... or a4paper or a5paper or ... 
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{epstopdf}
+\usepackage[utf8]{inputenc}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage[table]{xcolor}
+\usepackage{hyperref}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+\theoremstyle{definition}
+\newtheorem{example}{Example}
+
+\newenvironment{explanation}{%
+   \setlength{\parindent}{0pt}
+   \itshape
+   \color{blue}
+}{}
+
+\newcommand{\projectname}{Roboducks}
+\newcommand{\productname}{Robo Ducks}
+
+\newcommand{\projectleader}{P. Bauer}
+\newcommand{\documentstatus}{In process}
+%\newcommand{\documentstatus}{Submitted}
+%\newcommand{\documentstatus}{Released}
+\newcommand{\version}{V. 0.1}
+
+\begin{document}
+\begin{titlepage}
+\begin{flushright}
+
+\end{flushright}
+
+\vspace{10em}
+
+\begin{center}
+{\Huge Project Proposal} \\[3em]
+{\LARGE \productname} \\[3em]
+\end{center}
+
+\begin{flushleft}
+\begin{tabular}{|l|l|}
+\hline
+Project Name & \projectname \\ \hline
+Project Leader & \projectleader \\ \hline
+Document state & \documentstatus \\ \hline
+Version & \version \\ \hline
+\end{tabular}
+\end{flushleft}
+
+\end{titlepage}
+\section*{Revisions}
+\begin{tabular}{|l|l|l|}
+\hline
+\cellcolor[gray]{0.5}\textcolor{white}{Date} & \cellcolor[gray]{0.5}\textcolor{white}{Author} & \cellcolor[gray]{0.5}\textcolor{white}{Change} \\ \hline
+November 03, 2011&P. Bauer/T. Stütz&First version \\ \hline
+\end{tabular}
+\pagebreak
+
+\tableofcontents
+\pagebreak
+
+\section{Introduction}
+\begin{explanation}
+The goal of Roboducks is to participate in the German open Standard Platform League (SPL), where 5 Naos play soccer against other teams. All teams which play there are from Universities. Currently there is not a single team from Austria. That's why it would be great to take part in the German Standard Platform League, which also would be very good for our schools reputation.\\
+\end{explanation}
+\pagebreak
+
+\section{Initial Situation}
+\begin{explanation}
+
+
+To enable our robots to perform task with the precision needed to play Soccer, we will need a substitution for the Aldebaran Nao Framework (NaoQi). Since all of the other teams use their own framework we would not have a chance of winning if we used the Original.
+
+
+
+%\begin{itemize}
+%	\item Die Ist-Fähigkeiten der Organisation (was können wir?)
+%	\item Die Soll-Fähigkeiten der Organisation (was wollen wir können?)
+%	\item Ein Soll-Ist-Fähigkeitenvergleich (wo liegen die Defizite?)
+%	\item Ein Fähigkeitsvergleich nach vorgegebenen Bewertungskriterien
+%\end{itemize}
+\end{explanation}
+
+\pagebreak
+
+\section{General Conditions and Constraints}
+\begin{explanation}
+In this subject we will describe the tasks, conditions and general constraints. 
+\end{explanation}
+
+\begin{example}
+In our project we will have to deal with the following constraints:
+
+There are some general abilitys our Robots should have.
+\begin{itemize}
+	\item Recognize the starting whistle
+	\item Recognize the Football
+	\item Walk and move independently
+	\item Be able to decide what to do next according the situation
+	\item And finally kick 
+\end{itemize}
+
+That is why we need to to build a framework that controls the behaviour of the robots.
+
+\begin{itemize}
+\item To detect the starting whistle we need a sound Recognition engine.
+\item We need a Hardware abstraction Layer to control our robots.
+\item The Robot should be able to recognize objects, like the football, goals and lines.
+\item Our robots should know their position relative to the field and to each other.
+\item We need a "Brain" that manages every single task including communication with the game controller and other robots.
+
+\end{itemize}
+\end{example}
+
+\pagebreak
+
+\section{Project Objectives and System Concepts}
+\begin{explanation}
+Our goal is as mentioned before to be part of the German Open standard platform league. We know this is a tricky goal but we are determined to achieve it. In the end it should be that our robots have different strategies and decide which strategy to use according to their situation. The robots should find their positions reliably. For example our goalkeeper will have certain abilities which he will use, when he sees that a ball is approaching the goal. 
+\end{explanation}
+
+\begin{example}
+The project objectives can be summarized as follows:
+\begin{itemize}
+\item Different strategies 
+\item Communication between the robots
+\item Decision making
+\item Different behaviours based on the decisions
+\item to perfection the task to shoot the ball into the goal
+\end{itemize}
+\end{example}
+
+\pagebreak
+\section{Opportunities and Risks}
+\begin{explanation}
+This project gives us the opportunity to be part of the German Open Standard Platform League. This would be a big thing for our school because the other teams are all from universities. It would also be a good thing for our sponsor the Fabasoft because we would be very present in the media. But this comes with a risk. It is possible that our robots get broken when we be part of game with them and that would cost much money.
+\end{explanation}
+
+
+The following risk have to be taken into account.
+\begin{itemize}
+\item Data transfer of students master data from legacy systems is problematic.
+\item There is no information about the legacy systems and their data structure.
+\item Further there is no information, whether the staff is capable and willing to supply the students master data (names, classes, ...).
+\end{itemize}
+
+
+\pagebreak
+\section{Planning}
+\begin{explanation}
+In this section we are going to explain our plan, how we are planning to develop our Robo Ducks project. First we will clean up our robots, because over the past few years there was data uploaded which is no use to us anymore. But of course we are going to save that data on a cloud. 
+Then till Christmas we are planning to write the basic Framework, which will enable us to implement further functions specific to the football match. We do not believe that we will be able to take part on the german opens this year. But we will do our best. 
+
+Our major milestones:
+\begin{itemize}
+\item Basic Framework (Christmas)
+\item Basic Behavior (like detect the ball and kick it...)
+\item Teamplay (robots are communicating)
+\item Assign project lead and other outstanding roles to team members.
+\item Give a rough estimate how many resources you need (human resources, licenses, servers, etc.)
+\end{itemize}
+
+Our team roles:
+\begin{itemize}
+\item We do not have spezific role functions. 
+\end{itemize}
+
+Resources:
+\begin{itemize}
+\item 6 robots
+\item 1 accesspoint
+\item lan cables
+\item plog affords and power supplies
+\end{itemize}
+
+
+Answer the following questions when preparing this section:
+\begin{itemize}
+\item When will the project end?
+\item This project will always be continued.
+\item When will the project start?
+\item It allready started.
+\item When will be a first prototype available?
+\item Hopefully at about easter.
+\item When does implementation work start?
+\item In the next few weeks.
+\item What are the big blocks of work to be done?
+\item The framework, the behavior, the planning, the testing
+\item Is this work doable in the given period of time?
+\item When we are finished with the framework till christmas then yes.
+\item Do we need any other stuff to make our work (licenses, servers, É)?
+\item Yes, a cloud to safe the old data from the naos and stroe our projekt things, We could use GitHub or Microsoft OneDrive.
+\end{itemize}
+\end{explanation}
+
+\end{document}  
