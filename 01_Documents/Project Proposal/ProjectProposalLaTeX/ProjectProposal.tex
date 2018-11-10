@@ -23,7 +23,7 @@
 \newcommand{\projectname}{Roboducks}
 \newcommand{\productname}{Robo Ducks}
 
-\newcommand{\projectleader}{P. Bauer}
+\newcommand{\projectleader}{Florentin Gewessler}
 \newcommand{\documentstatus}{In process}
 %\newcommand{\documentstatus}{Submitted}
 %\newcommand{\documentstatus}{Released}
@@ -58,9 +58,7 @@ Version & \version \\ \hline
 \hline
 \cellcolor[gray]{0.5}\textcolor{white}{Date} & \cellcolor[gray]{0.5}\textcolor{white}{Author} & \cellcolor[gray]{0.5}\textcolor{white}{Change} \\ \hline
 November 03, 2011&P. Bauer/T. Stütz&Template \\ \hline
-
-
-November 06, 2018&P. Gewessler/Gaisbauer&First Version\\ \hline
+November 06, 2018&Gewessler/Gaisbauer&First Version\\ \hline
 \end{tabular}
 \pagebreak
 
@@ -76,51 +74,43 @@ The goal of Roboducks is to participate in the German open Standard Platform Lea
 \section{Initial Situation}
 
 
-Currently there are many teams which participate in the German Open Standard Platform League but none of them are Austrian. Furthermore, like we mentioned earlier, the teams are all from universities and we would like to change that. Like all other teams we will have to develop our own framework because the NAOQI, which the robots have already installed, has too few functions and reacts too slow as we would require. Additionally, the previous generations of the robotics team were too few people...(noch nicht fertig)
+Currently there are many teams which participate in the German Open Standard Platform League but none of them are Austrian. Furthermore, like we mentioned earlier, the teams are all from universities and we would like to change that. Like all other teams we will have to develop our own framework because the NAOQI, which the robots have already installed, has too few functions and reacts too slow as we would require. Additionally, in the previous generations of the robotics team were not enough people and had too less resources (robots, money...) to build a robot team which could participate in the German Opens Standard Platform League. Also we would like to mention that the previous generation build a system which worked well for one specific task but it was very difficult to add a new function. With our new system it will be very easy to add new features and functions which we will explain in more detail later. A small thing we would like to mention is that this year we will work even more often in the Fabasoft. This is a good thing because we noticed last year that we have worked more efficiently when we were there. Another important fact is that we switched from the programming language Python to C++. C++ has a lot of benefits over Python. For example it is way faster and is in our opinion easier to read. 
 
 
 \pagebreak
 
 \section{General Conditions and Constraints}
 
-In our project we will have to deal with the following constraints:
+In our project we will have to face the other teams in the German Open Standard Platform League. But we have a long way to go till we reach this point. First we have do deal with the hardware and the software conditions which means we have to develop our framework to program and control our robots. Then we have to deal with the "physical" conditions. This means we have to learn our robots how to move, how to kick and even how to see. Actually we have to develop all minor functions and movements from the ground up which will cost a lot of time.\linebreak
 
-There are some general abilitys our Robots should have.
-\begin{itemize}
-	\item Recognize the starting whistle
-	\item Recognize the Football
-	\item Walk and move independently
-	\item Be able to decide what to do next according the situation
-	\item And finally kick 
-\end{itemize}
-
-That is why we need to to build a framework that controls the behaviour of the robots.
-
-\begin{itemize}
-\item To detect the starting whistle we need a sound Recognition engine.
-\item We need a Hardware abstraction Layer to control our robots.
-\item The Robot should be able to recognize objects, like the football, goals and lines.
-\item Our robots should know their position relative to the field and to each other.
-\item We need a "Brain" that manages every single task including communication with the game controller and other robots.
-
-\end{itemize}
+The most constraints we will have to deal with will be hardware constrains. Because the robot has only limited hardware like a weak processor or only 1 GB of RAM. So we have to develop our framework as resources saving as possible to keep up good performance. Also are the motors of the joints are rather weak and overheat easily. But there are also some other constraints like we have only limited time for development on our project because of other important things like school. Other constraints are financial nature. At the moment we have through our sponsor Fabasoft 10.000 Euros a year. But as we know from the teams of the universities is the development is a very expensive thing. And some of our competitors have five times the financial resources.
 
 \pagebreak
 
 \section{Project Objectives and System Concepts}
 
-Our goal is as mentioned before to be part of the German Open standard platform league. We know this is a tricky goal but we are determined to achieve it. In the end it should be that our robots have different strategies and decide which strategy to use according to their situation. The robots should find their positions reliably. For example our goalkeeper will have certain abilities which he will use, when he sees that a ball is approaching the goal. \newline
+Our goal is as mentioned before to be part of the German Open standard platform league. We know this is a tricky goal but we are determined to achieve it. In the end it should be that our robots have different strategies and decide which strategy to use according to their situation. The robots should find their positions reliably. For example our goalkeeper will have certain abilities which he will use, when he sees that a ball is approaching the goal. 
+\newline
+
+Our system concept is based on our framework Duckburg. This framework is composed out of the brain, the engines and the agents.
+\newline
+
+The Brain is the central part of the Framework, even though being the simplest component upon the three. It works as the junction for the communication traffic of the Engines. The tasks of the Brain are only to provide Engines with the possibility to subscribe to Slots and send Intents to them. Also it is the keeper of the dictionary that contains Slots and Filters. The main focus of the brain is to minimize its logical effort and therefore maximize communication possibilities for Engines.\linebreak
+
+Engines are the components of Duckburg that do the thinking. But their basic functions are send intents to the brain and they subscribe to slots.  An Intent contains a command that should be executed. After an Intent is sent to the Brain it runs through a number of Intent Filters that sort out illegal Intents. Then the Brain forwards the Intent to the correct slot. If the Slot that the Intent is sent to doesn’t exist, it is created. When an Intent reaches the Slot it is sent to all Engines that have subscribed to this Slot. An Engine subscribes to a Slot by specifying a method that will be called when an Intent is sent to this Slot. As soon as an Engine subscribes to a Slot this Slot is created if it didn’t exist before. The key point of Engines is that they don’t really ”do” anything but that they ”think” about and react to things.\linebreak
+
+\pagebreak
 
 
-The project objectives can be summarized as follows: \newline
+
+Agents are components of Duckburg that really make things go... literally. They are invoked by their Engines and then perform the task they are made to do. Examples for Agents could be: An Agent:
 \begin{itemize}
-\item Different strategies 
-\item Communication between the robots
-\item Decision making
-\item Different behaviours based on the decisions
-\item to perfection the task to shoot the ball into the goal
+\item ... that walks
+\item ... that calculates the position of an object 
+\item ... that writes a log entry to a file
+\item and so on
 \end{itemize}
-
+This way we can develop functions without changing the whole framework.\linebreak
 
 \pagebreak
 \section{Opportunities and Risks}
@@ -129,12 +119,7 @@ This project gives us the opportunity to be part of the German Open Standard Pla
 
 
 
-The following risk have to be taken into account.
-\begin{itemize}
-\item Data transfer of students master data from legacy systems is problematic.
-\item There is no information about the legacy systems and their data structure.
-\item Further there is no information, whether the staff is capable and willing to supply the students master data (names, classes, ...).
-\end{itemize}
+In our project we have some risks we have to take account to. For example, like mention earlier, our robots are not that robust and it is possible that some parts of them get broken while we test them on something. This is not a major problem because we have a maintenance contract with Aldebaran but while the affected robot is France we cannot work with it.  
 
 
 \pagebreak
@@ -145,17 +130,16 @@ Then till Christmas we are planning to write the basic Framework, which will ena
 
 Our major milestones:\newline
 \begin{itemize}
-\item Basic Framework (Christmas)
-\item Basic Behavior (like detect the ball and kick it...)
-\item Teamplay (robots are communicating)
-\item Assign project lead and other outstanding roles to team members.
-\item Give a rough estimate how many resources you need (human resources, licenses, servers, etc.)
+\item Basic Framework (Christmas)  24th December 2018
+\item Basic Behavior (like detect the ball and kick it...)   21st April 2019
+\item Working team communication and team play		15th November 2019
 \end{itemize}
 
 
 Our team roles:
 \begin{itemize}
-\item We do not have spezific role functions. 
+\item Team leader:	Florentin Gewessler
+\item Programmers:	Jakob Wögerbauer, Lukas Gaisbauer, Georg Sengstbratl, Christoph Knoll
 \end{itemize}
 
 \pagebreak
