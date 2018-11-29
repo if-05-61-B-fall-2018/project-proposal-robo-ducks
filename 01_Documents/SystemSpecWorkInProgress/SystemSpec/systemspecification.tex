@@ -1,0 +1,147 @@
+\documentclass[12pt]{article}
+\usepackage{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper}                   % ... or a4paper or a5paper or ... 
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{epstopdf}
+\usepackage[utf8]{inputenc}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage[table]{xcolor}
+\usepackage{hyperref}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+\theoremstyle{definition}
+\newtheorem{example}{Example}
+
+\newenvironment{explanation}{%
+   \setlength{\parindent}{0pt}
+   \itshape
+   \color{blue}
+}{}
+
+\newcommand{\projectname}{Roboducks}
+\newcommand{\productname}{Robo Ducks}
+
+\newcommand{\projectleader}{Florentin Gewessler}
+\newcommand{\documentstatus}{In process}
+%\newcommand{\documentstatus}{Submitted}
+%\newcommand{\documentstatus}{Released}
+\newcommand{\version}{V. 0.1}
+
+\begin{document}
+\begin{titlepage}
+\begin{flushright}
+
+\end{flushright}
+
+\vspace{10em}
+
+\begin{center}
+{\Huge System Specification} \\[3em]
+{\LARGE \productname} \\[3em]
+\end{center}
+
+\begin{flushleft}
+\begin{tabular}{|l|l|}
+\hline
+Project Name & \projectname \\ \hline
+Project Leader & \projectleader \\ \hline
+Document state & \documentstatus \\ \hline
+Version & \version \\ \hline
+\end{tabular}
+\end{flushleft}
+
+\end{titlepage}
+\section*{Revisions}
+\begin{tabular}{|l|l|l|}
+\hline
+\cellcolor[gray]{0.5}\textcolor{white}{Date} & \cellcolor[gray]{0.5}\textcolor{white}{Author} & \cellcolor[gray]{0.5}\textcolor{white}{Change} \\ \hline
+November 03, 2011&P. Bauer/T. Stütz&Template \\ \hline
+November 06, 2018&Gewessler/Gaisbauer&First Version\\ \hline
+\end{tabular}
+\pagebreak
+
+\tableofcontents
+\pagebreak
+
+\section{Initial Situation}
+
+
+Our goal is to participate in the German Open Standard Platform League. The German Open Standard Platform League is a soccer league where all teams participate using the same robot, the NAO robot from SoftBank Robotics. These robots play fully autonomously and each one takes decisions separately from the others, but they still have to play as a team by using communications. The teams play on a green field with white lines and goal posts, with no other landmarks, and the ball consists in a realistic white and black soccer one. These game characteristics generate a very challenging scenario, which allows improving the league every year. 
+
+
+
+
+\pagebreak
+
+\section{Application Domain}
+
+Our competition are mostly teams from universities like the team B-Human which comes from the university Bremen. In this field it is very important to have sponsors because the most schools and universities can not effort too many robots. We have talked to some of the other teams and they said they would need about 50.000 Euros a year. 
+As we mentioned earlier, our main goal is to participate in the German Open Standard Platform League but we can break this down to many sub goals. The first sub goal would be that we finish the framework, which we call “Duckburg”, till the 24.12.2018. The framework is the base of our software which will  contain the basic functions of a system. 
+
+\pagebreak
+
+\section{Glossary}
+
+
+
+\pagebreak
+
+
+
+Agents are components of Duckburg which really make things go... literally. They are invoked by their Engines and then perform the task they are made to do. Examples for Agents could be: An Agent:
+\begin{itemize}
+\item ... that walks
+\item ... that calculates the position of an object 
+\item ... that writes a log entry to a file
+\item and so on
+\end{itemize}
+This way we can develop functions without changing the whole framework.\linebreak
+
+\pagebreak
+\section{Model of the Application Domain}
+
+This project gives us the opportunity to be part of the German Open Standard Platform League. This would be a big thing for our school because the other teams are all from universities. It would also be a good thing for our sponsor the Fabasoft because we would be very present in the media. \newline
+
+
+
+In our project we have some risks which we will have to take to account of. For example our robots are not that robust and it is possible that some parts of them get broken while we test them on something. This is not a major problem because we have a maintenance contract with Aldebaran but while the affected robot is in France we cannot work with it.  
+
+\section{Overview of the Business Processes}
+
+\section{Description of the Business Processes}
+
+\section{Goal Definition}
+\pagebreak
+\section{Functional Requirements}
+\section{Use Case Diagrams}
+\section{ Use Case Details}
+\section{Characteristic Information}
+\section{GUI to call the use case}
+\section{Scenario for the standard use (good case)}
+\section{GUIs for the standard use}
+\section{Scenarios for non-standard uses (bad cases or work around cases)}
+\section{GUIs for the non-standard uses}
+\section{Workflow}
+\section{Open Points}
+\pagebreak
+\section{Non-functional Requirements}
+\pagebreak
+\section{Quantity Structure}
+\pagebreak
+\section{System Architecture and Interfaces}
+\pagebreak
+\section{Acceptance Criteria}
+\pagebreak
+\section{List of Abbreviations}
+\pagebreak
+\section{References}
+\pagebreak
+\section{6	List of Figures}
+
+
+
+
+
+\end{document}  
