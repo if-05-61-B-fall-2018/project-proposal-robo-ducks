@@ -92,8 +92,15 @@ The last step would be the the communication between one robot to another one. H
 \pagebreak
 
 \subsubsection{Glossary}
-
-
+\begin{tabular}{|l|l|}
+\hline
+\cellcolor[gray]{0.5}\textcolor{white}{Fold Concept} & \cellcolor[gray]{0.5}\textcolor{white}{Description} \\ \hline
+Duckburg&Basic Framework provides the basis of our system \\ \hline
+Engines&Manages the agents for an specific task\\ \hline
+Agents&Providing specific function like walking\\ \hline
+NAO-Robots&The kind of robots we are using\\ \hline
+NAO-QI&pre installed framework\\ \hline
+\end{tabular}
 
 
 \pagebreak
@@ -106,16 +113,56 @@ do not exist
 \subsubsection{Description of the Business Processes}
 
 \subsection{Goal Definition}
+The goal of Roboducks is to participate in the German open Standard Platform League (SPL), where 5 Naos play soccer against other teams currently there is no other team from Austria and non that is from a Higher Technical School. For archiving this goal we have to program a new framework because the existing one from Aldebaran (NaoQi) is slow and in some cases not reliable. The new framework is made with C++ which provides as language a awesome performance and memory efficiency. With the new framework we can focus on our main goal to play football with the robots and program smart techniques to play out an Universitie team which would be an great phus for our schools reputation.
+
 \pagebreak
 \section{Functional Requirements}
+The system must be: lightwate in CPU and RAM usage, easy to add/remove features,  capable with several NAO generations, football……
+\pagebreak
 \subsection{Use Case Diagrams}
+\begin{flushright}
+\includegraphics[scale=.5]{Penalty.png}\\
+\end{flushright}
+The SPL Rulebook has strict definitions for Penalties. Basically if a robot does something wrong it gets informed via the GameController and and one of the assistant referee will carry the robot to a specific spot at the sideline of the game area so that the robot cant see the game. After the penalty time the robot must turn around and and get his position to return to the game. An important thing to point out is that the penalty time increases during the game.
+In general it would be good if ouer code detects/avoid forbidden actions. 
+
+\begin{flushright}
+\includegraphics[scale=.5]{Positioning.png}\\
+\end{flushright}
+For getting the Position the Robot needs to analyse the sensor data primarily form the Cameras and maby form the infrared sensors to. The analysation is based on detecting the game aeria borders with them the robot can calculate with Trigonometry where he is. An other option is to ask the other team members where he is but for this we have to implement some smart code.
+
+
+\begin{flushright}
+\includegraphics[scale=.5]{Kick_the_Ball.png}\\
+\end{flushright}
+For kicking the ball the robot must find the ball there are agan to ways a he can do it by himself or aske the other robots. Than the robot must go to the ball and gave it a hit into the ride directions.
+
+\begin{flushright}
+\includegraphics[scale=.5]{BlockBall.png}\\
+\end{flushright}
+If the ball cames to the robot with the goalkeeper role he schuld calculate where the ball might go so that he can stop it.
+\pagebreak
 \subsection{Use Case Details}
+
+\pagebreak
 \subsubsection{Characteristic Information}
+
+\pagebreak
 \subsubsection{GUI to call the use case}
+
+\pagebreak
 \subsubsection{GUIs for the standard use}
+
+\pagebreak
 \subsubsection{Scenarios for non-standard uses (bad cases or work around cases)}
+
+\pagebreak
 \subsubsection{GUIs for the non-standard uses}
+
+\pagebreak
 \subsubsection{Workflow}
+
+\pagebreak
 \subsubsection{Open Points}
 \pagebreak
 \section{Non-functional Requirements}
